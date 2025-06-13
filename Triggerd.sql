@@ -1,6 +1,6 @@
 CREATE DEFINER=`root`@`localhost` TRIGGER `after_user_insert` AFTER INSERT ON `users` FOR EACH ROW BEGIN
     INSERT INTO user_log (user_id, action_type, new_name, new_email, changed_by)
-    VALUES (NEW.id, 'INSERT', NEW.name, NEW.email, current_user());
+    VALUES (NEW.id, 'INS', NEW.name, NEW.email, current_user());
 END
 
 
